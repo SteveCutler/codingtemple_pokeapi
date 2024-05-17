@@ -1,0 +1,42 @@
+.radial-gradient {
+    background-image: radial-gradient(ellipse at top left, #aaaaaa, #000000);
+}
+
+/* Hide dropdown menu by default */
+.dropdown-menu {
+    position: absolute;
+    top: 112px;
+    right: 5%;
+    background-color: #6e6e6e;
+    border: 1px solid #404040;
+    border-top: none;
+    box-shadow: 2px 4px 6px rgba(0, 4, 4, 0.4);
+    padding: 0;
+    margin: 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: azure;
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+/* Style dropdown menu items */
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu ul li {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.dropdown-menu ul li:hover {
+    color: #aaaaaa;
+}
+
+/* Hide dropdown menu initially */
+.hidden {
+    display: none;
+}
