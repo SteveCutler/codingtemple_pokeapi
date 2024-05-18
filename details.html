@@ -17,7 +17,7 @@
         <div class="w-screen h-screen flex flex-col">
             <!-- Nav Bar -->
             <nav
-                class="px-6  xl:justify-center shadow-lg bg-gradient-to-b from-red-500 to-red-800 w-full mx-auto h-30 flex"
+                class="px-6 xl:justify-center shadow-lg bg-gradient-to-b from-red-500 to-red-800 w-full mx-auto h-30 flex"
             >
                 <div
                     class="xl:w-3/4 w-full flex justify-around md:justify-center"
@@ -25,12 +25,14 @@
                     <!-- POKEMON LOGO -->
                     <section class="flex">
                         <div class="card my-2 p-2 rounded-full">
-                            <img
-                                class="h-20 hover:cursor-pointer hover:scale-[1.02] active:scale-[0.98] "
-                                src="pokedex-icon.png"
-                                alt="3d pokedex logo"
-                                href="main.html"
-                            />
+                            <a href="details.html">
+                                <img
+                                    class="h-20 hover:cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
+                                    src="pokedex-icon.png"
+                                    alt="3d pokedex logo"
+                                    href="main.html"
+                                />
+                            </a>
                         </div>
                     </section>
 
@@ -38,42 +40,49 @@
                     <div
                         class="hidden md:flex pe-10 lg:pe-20 items-center justify-around w-4/5"
                     >
-                        <div
-                            class="rounded-full flex shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] items-center border-4 p-1 px-2"
-                        >
-                            <img
-                                class="h-7 px-1 filter brightness-0 invert grayscale"
-                                src="icons/psyduck_icon.png"
-                                alt="psyduck icon"
-                            />
-                            <p class="p-1 text-xl text-bold text-white">
-                                SEARCH
-                            </p>
-                        </div>
-                        <div
-                            class="rounded-full flex items-center shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] border-4 p-1 px-2"
-                        >
-                            <img
-                                class="h-7 px-1 filter brightness-0 invert grayscale"
-                                src="icons/belfry_icon.png"
-                                alt="belfry icon"
-                            />
-                            <p class="p-1 text-xl text-bold text-white">
-                                TYPES
-                            </p>
-                        </div>
-                        <div
-                            class="rounded-full cursor-pointer shadow-lg hover:scale-[1.02] active:scale-[0.98] flex items-center border-4 p-1 px-2"
-                        >
-                            <img
-                                class="h-7 px-1 filter brightness-0 invert grayscale"
-                                src="icons/diglet_icon.png"
-                                alt="psyduck icon"
-                            />
-                            <p class="p-1 text-xl text-bold text-white">
-                                GENERATIONS
-                            </p>
-                        </div>
+                        <a href="search.html">
+                            <div
+                                class="rounded-full flex shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] items-center border-4 p-1 px-2"
+                            >
+                                <img
+                                    class="h-7 px-1 filter brightness-0 invert grayscale"
+                                    src="icons/psyduck_icon.png"
+                                    alt="psyduck icon"
+                                />
+
+                                <p class="p-1 text-xl text-bold text-white">
+                                    SEARCH
+                                </p>
+                            </div>
+                        </a>
+                        <a href="types.html">
+                            <div
+                                class="rounded-full flex items-center shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] border-4 p-1 px-2"
+                            >
+                                <img
+                                    class="h-7 px-1 filter brightness-0 invert grayscale"
+                                    src="icons/belfry_icon.png"
+                                    alt="belfry icon"
+                                />
+                                <p class="p-1 text-xl text-bold text-white">
+                                    TYPES
+                                </p>
+                            </div>
+                        </a>
+                        <a href="generations.html">
+                            <div
+                                class="rounded-full cursor-pointer shadow-lg hover:scale-[1.02] active:scale-[0.98] flex items-center border-4 p-1 px-2"
+                            >
+                                <img
+                                    class="h-7 px-1 filter brightness-0 invert grayscale"
+                                    src="icons/diglet_icon.png"
+                                    alt="psyduck icon"
+                                />
+                                <p class="p-1 text-xl text-bold text-white">
+                                    GENERATIONS
+                                </p>
+                            </div>
+                        </a>
                     </div>
 
                     <!-- HAMBURGER MENU  -->
@@ -88,77 +97,170 @@
                 </div>
             </nav>
 
-
-
             <!--MAIN SECTION-->
             <section
-                class="flex-1 overflow-auto sm:mx-auto px-5 md:px-10 bg-gradient-to-b from-blue-300 to-blue-500 justify-center w-full"
+                class="flex-1 overflow-auto sm:mx-auto px-5 md:px-10 bg-gradient-to-b from-blue-300 py-4 to-blue-500 justify-center w-full"
             >
-
-            <!-- SEARCH BAR -->
-            <div class=" rounded-full  border-2 border-slate-400 shadow-lg items-center justify-around xl:justify-center my-5 sm:my-5 xl:my-6x` mx-auto bg-slate-300 w-11/12 lg:w-1/2 xl:w-1/3  flex px-3 py-4">
-                <form class="w-3/4 flex"> 
-                    <input class="bg-slate-100 flex w-full rounded-full px-3 py-2 mx-2" type="text" id="search" name="search">
-                </form>
-                <button class="bg-blue-600 text-white hover:bg-blue-400 hover:border-blue-500 hover:scale-[0.95] active:scale-[0.92] active:bg-blue-300 active:border-blue-400 font-bold border-2 border-blue-700 shadow-lg text-center mx-2 py-2 px-4 rounded-full">Submit</button>
-            </div>
-
                 <!-- CONTENT CONTAINER -->
                 <div
-                    class="flex flex-col md:flex-row grow-0 shrink p-2 w-full  mx-auto my-5 sm:my-5 xl:my-5 rounded-lg"
+                    class="flex flex-col md:flex-row grow-0 shrink w-full mx-auto my-2 sm:my-2 xl:my-2 rounded-lg"
                 >
-
-                        <!-- CHARACTER PANEL -->
-                        <section
-                        class="bg-slate-300 shadow-lg border-2 border-slate-400  rounded-3xl border-blue-500 w-full mx-auto  xl:w-2/6 p-3 my-2"
+                    <!-- CHARACTER PANEL -->
+                    <div
+                        class="bg-slate-200 shadow-lg border-2 border-slate-400 h-full rounded-3xl border-blue-500 w-full md:w-1/2 mx-auto xl:w-2/6 p-3 my-2"
                     >
-                        <img
-                            class="w-4/5 mx-auto p-2"
-                            src="images/Ditto.png"
-                            alt="ditto"
-                        />
-
+                        <!-- Image -->
                         <div
-                            class="m-2 my-4 flex-col text-lg w-4/5 mx-auto text-center text-slate-800"
+                            class="p-1 m-3 border-2 border-slate-400 bg-gradient-to-b from-slate-400 to-slate-700 rounded-3xl"
                         >
-                            <h1
-                                class="title text-center text-2xl font-bold text-slate-700"
+                            <img
+                                class="w-4/5 mx-auto my-4 border-4 border-slate-700 p-2 bg-slate-100 rounded-3xl"
+                                src="images/Ditto.png"
+                                alt="ditto"
+                            />
+
+                            <!-- INFO -->
+                            <div
+                                class="m-2 my-4 flex-col text-lg w-4/5 mx-auto text-center text-slate-200"
                             >
-                                NAME
-                            </h2>
-                            <p class="description my-4">
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Sit molestiae rem est. Quo
-                                unde, earum odio nam, velit nisi assumenda fuga
-                                nostrum totam nobis nemo adipisci, distinctio
-                                consequatur autem modi optio ad hic beatae. Hic
-                                facere nulla voluptate corporis minima?
-                            </p>
-                            <p class="my-5 text-center">
-                                
-                            </p>
-                        </div>
-                    </section>
+                                <h1
+                                    class="title text-center text-2xl p-4 font-bold"
+                                >
+                                    NAME
+                                </h1>
 
-                            <!-- STATS PANEL -->
-                            <section
-                                class="bg-slate-200 flex-col text-lg border-2 border-slate-400 rounded-3xl shadow-lg border-red-100 w-full mx-auto md:mx-5 xl:w-4/6 my-2 p-5"
-                            ><div class="flex-col flex lg:flex-row items-center flex mx-auto">
-
-                                <div class="w-full flex md:w-3/4 lg:w-1/2 mx-auto  p-5">
-                                    <canvas class=" radar-chart"></canvas>
-                                </div>
-                                <p class="w-full flex md:w-3/4 lg:w-1/2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel excepturi iste autem repellat rerum et!</p>
-
+                                <p
+                                    class="inline-grid flex-0 grid-rows-3 grid-cols-2 gap-3"
+                                >
+                                    <span
+                                        class="col-1 bg-slate-200 text-slate-700 mx-auto flex rounded-3xl px-3 py-1 shadow-lg"
+                                        >Number</span
+                                    >
+                                    <span
+                                        class="col-1 bg-slate-200 text-slate-700 mx-auto flex rounded-3xl px-3 py-1 shadow-lg"
+                                        >Height</span
+                                    >
+                                    <span
+                                        class="col-1 bg-slate-200 text-slate-700 mx-auto flex rounded-3xl px-3 py-1 shadow-lg"
+                                        >Weight</span
+                                    >
+                                    <span
+                                        class="col-1 bg-slate-200 text-slate-700 mx-auto flex rounded-3xl px-3 py-1 shadow-lg"
+                                        >Species</span
+                                    >
+                                    <span
+                                        class="col-1 bg-slate-200 text-slate-700 mx-auto flex rounded-3xl px-3 py-1 shadow-lg"
+                                        >Other stages</span
+                                    >
+                                </p>
                             </div>
-                                <div class="flex m-5 p-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates laudantium officia numquam, eum libero veniam?
-                                </div>
+                        </div>
+                    </div>
 
-                            </section>
-                            
+                    <!-- STATS PANEL -->
+                    <section
+                        class="border-2 border-slate-700 gap-5 bg-gradient-to-b from-slate-400 to-slate-700 flex-col text-lg h-full flex rounded-3xl shadow-lg border-red-100 w-full mx-auto md:w-1/2 md:mx-5 xl:w-4/6 my-2 p-5"
+                    >
+                        <!-- CONTAINER -->
+                        <div
+                            class="flex-col xl:flex-row grow-1 gap-5 flex mx-auto w-full"
+                        >
+                            <!-- STATS DIAGRAM -->
+                            <div
+                                class="flex p-4 gap-3 w-full xl:w-1/2 mx-auto justify-center bg-slate-200 border-2 border-slate-400 text-slate-200 rounded-3xl text-lg font-bold font-italics"
+                            >
+                                <canvas class="radar-chart"></canvas>
+                            </div>
+
+                            <div
+                                class="flex p-4 gap-3 w-full xl:w-1/2 mx-auto justify-center bg-slate-200 border-2 border-slate-400 text-slate-200 rounded-3xl text-lg font-bold font-italics"
+                            >
+                                <!-- ABILITIES -->
+                                <div
+                                    class="flex-col w-full xl:w-1/2 h-full p-5 flex my-10 mx-auto"
+                                >
+                                    <h1
+                                        class="text-3xl text-slate-700 flex font-bold mx-auto p-3 text-center"
+                                    >
+                                        ABILITIES
+                                    </h1>
+                                    <ol
+                                        class="text-slate-100 justify-center p-3 flex gap-2"
+                                    >
+                                        <li
+                                            class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
+                                        >
+                                            <p
+                                                class="text-lg font-bold font-italics"
+                                            >
+                                                Transform
+                                            </p>
+                                        </li>
+
+                                        <li
+                                            class="bg-gradient-to-b from-slate-500 shadow-lg to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
+                                        >
+                                            <p
+                                                class="text-lg font-bold font-italics"
+                                            >
+                                                Transform
+                                            </p>
+                                        </li>
+                                    </ol>
+
+                                    <!-- TYPES -->
+                                    <h1
+                                        class="text-3xl flex text-slate-700 font-bold mx-auto p-3 text-center"
+                                    >
+                                        TYPES
+                                    </h1>
+                                    <ol
+                                        class="text-slate-100 justify-center p-3 flex gap-2"
+                                    >
+                                        <li
+                                            class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
+                                        >
+                                            <p
+                                                class="text-lg font-bold font-italics"
+                                            >
+                                                Normal
+                                            </p>
+                                        </li>
+
+                                        <li
+                                            class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
+                                        >
+                                            <p
+                                                class="text-lg font-bold font-italics"
+                                            >
+                                                Normal
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OTHER INFO -->
+                        <div
+                            class="flex p-4 gap-3 w-full mx-auto justify-center bg-slate-200 border-2 border-slate-400 text-slate-200 rounded-3xl text-lg font-bold font-italics"
+                        >
+                            <span
+                                class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
+                                >Species</span
+                            >
+                            <span
+                                class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
+                                >Species</span
+                            >
+                            <span
+                                class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
+                                >Species</span
+                            >
                         </div>
                     </section>
+                </div>
+            </section>
         </div>
 
         <script src="main.js"></script>

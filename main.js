@@ -1,31 +1,23 @@
-const menuButton = document.getElementsById('menuButton');
-const dropdownMenu = document.getElementById('dropdownMenu');
+// const menuButton = document.getElementsById('menuButton');
+// const dropdownMenu = document.getElementById('dropdownMenu');
 
 const options = {
     scale: {
         angleLines: {
-            display: false,
+            //   display: false,
         },
         ticks: {
-            fontColor: 'red', // Change the color of the scale numbers
-            fontSize: 14, // Change the font size of the scale numbers
+            //  display: true,
         },
     },
 };
 
 const data = {
-    labels: [
-        'Eating',
-        'Drinking',
-        'Sleeping',
-        'Designing',
-        'Coding',
-        'Cycling',
-    ],
+    labels: ['hp', 'attack', 'defense', 'sp-attack', 'sp-defense', 'speed'],
     datasets: [
         {
-            label: 'STATS',
-            data: [65, 59, 90, 81, 56, 55],
+            label: 'BASE STATS',
+            data: [48, 48, 48, 48, 48, 48],
             fill: true,
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
             borderColor: 'rgb(255, 99, 132)',
@@ -44,12 +36,13 @@ const radarChart = new Chart(ctx, {
     data: data,
     options: options,
 });
-const exposeMenu = () => {
-    // dropdownMenu.classList.toggle('hidden');
-};
+
+// const exposeMenu = () => {
+//     // dropdownMenu.classList.toggle('hidden');
+// };
 
 window.addEventListener('resize', () => {
     radarChart.resize();
 });
 
-menuButton.addEventListener('onClick', exposeMenu);
+// menuButton.addEventListener('onClick', exposeMenu);
