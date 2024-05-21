@@ -16,7 +16,7 @@
         <div class="w-screen h-screen flex flex-col">
             <!-- Nav Bar -->
             <nav
-                class="px-6 xl:justify-center shadow-lg bg-gradient-to-b from-red-500 to-red-800 w-full mx-auto h-30 flex"
+                class="px-6 xl:justify-center border-b-4 border-red-900 shadow-lg bg-gradient-to-b from-red-500 to-red-800 w-full mx-auto h-30 flex"
             >
                 <div
                     class="xl:w-3/4 w-full flex justify-around md:justify-center"
@@ -24,12 +24,11 @@
                     <!-- POKEMON LOGO -->
                     <section class="flex">
                         <div class="card my-2 p-2 rounded-full">
-                            <a href="details.html">
+                            <a id="randomLink" href="">
                                 <img
                                     class="h-20 hover:cursor-pointer hover:scale-[1.02] active:scale-[0.98]"
                                     src="pokedex-icon.png"
                                     alt="3d pokedex logo"
-                                    href="main.html"
                                 />
                             </a>
                         </div>
@@ -39,7 +38,7 @@
                     <div
                         class="hidden md:flex pe-10 lg:pe-20 items-center justify-around w-4/5"
                     >
-                        <a href="search.html">
+                        <a href="main.html">
                             <div
                                 class="rounded-full flex shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] items-center border-4 p-1 px-2"
                             >
@@ -63,7 +62,9 @@
                                     src="icons/belfry_icon.png"
                                     alt="belfry icon"
                                 />
-                                <p class="p-1 text-xl text-bold text-white">
+                                <p
+                                    class="p-1 text-xl underline-offset-4 underline decoration-4 text-bold text-white"
+                                >
                                     TYPES
                                 </p>
                             </div>
@@ -98,52 +99,58 @@
                         <div id="dropdownMenu" class="dropdown-menu hidden">
                             <ul>
                                 <li>
-                                    <div
-                                        class="rounded-full flex shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] items-center border-4 p-1 px-2"
-                                    >
-                                        <img
-                                            class="h-7 px-1 filter brightness-0 invert grayscale"
-                                            src="icons/psyduck_icon.png"
-                                            alt="psyduck icon"
-                                        />
-                                        <p
-                                            class="p-1 text-xl text-bold text-white"
+                                    <a href="main.html">
+                                        <div
+                                            class="rounded-full flex shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] items-center border-4 p-1 px-2"
                                         >
-                                            SEARCH
-                                        </p>
-                                    </div>
+                                            <img
+                                                class="h-7 px-1 filter brightness-0 text-center invert grayscale"
+                                                src="icons/psyduck_icon.png"
+                                                alt="psyduck icon"
+                                            />
+                                            <p
+                                                class="p-1 text-xl select-none text-bold text-white"
+                                            >
+                                                SEARCH
+                                            </p>
+                                        </div>
+                                    </a>
                                 </li>
                                 <li>
-                                    <div
-                                        class="rounded-full flex items-center shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] border-4 p-1 px-2"
-                                    >
-                                        <img
-                                            class="h-7 px-1 filter brightness-0 invert grayscale"
-                                            src="icons/belfry_icon.png"
-                                            alt="belfry icon"
-                                        />
-                                        <p
-                                            class="p-1 text-xl text-bold text-white"
+                                    <a href="types.html">
+                                        <div
+                                            class="rounded-full flex items-center shadow-lg cursor-pointer hover:scale-[1.02] active:scale-[0.98] border-4 p-1 px-2"
                                         >
-                                            TYPES
-                                        </p>
-                                    </div>
+                                            <img
+                                                class="h-7 px-1 filter brightness-0 invert grayscale"
+                                                src="icons/belfry_icon.png"
+                                                alt="belfry icon"
+                                            />
+                                            <p
+                                                class="p-1 text-xl select-none text-center text-bold text-white"
+                                            >
+                                                TYPES
+                                            </p>
+                                        </div>
+                                    </a>
                                 </li>
                                 <li>
-                                    <div
-                                        class="rounded-full cursor-pointer shadow-lg hover:scale-[1.02] active:scale-[0.98] flex items-center border-4 p-1 px-2"
-                                    >
-                                        <img
-                                            class="h-7 px-1 filter brightness-0 invert grayscale"
-                                            src="icons/diglet_icon.png"
-                                            alt="psyduck icon"
-                                        />
-                                        <p
-                                            class="p-1 text-xl text-bold text-white"
+                                    <a href="generations.html">
+                                        <div
+                                            class="rounded-full cursor-pointer shadow-lg hover:scale-[1.02] active:scale-[0.98] flex items-center border-4 p-1 px-2"
                                         >
-                                            GENERATIONS
-                                        </p>
-                                    </div>
+                                            <img
+                                                class="h-7 px-1 filter brightness-0 invert grayscale"
+                                                src="icons/diglet_icon.png"
+                                                alt="psyduck icon"
+                                            />
+                                            <p
+                                                class="p-1 text-xl select-none text-bold text-white"
+                                            >
+                                                GENERATIONS
+                                            </p>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -153,40 +160,329 @@
 
             <!--MAIN SECTION-->
             <section
-                class="flex-1 overflow-auto sm:mx-auto px-5 md:px-10 bg-gradient-to-b from-blue-300 to-blue-500 justify-center w-full"
+                class="flex-1 overflow-auto sm:mx-auto px-5 md:px-10 bg-gradient-to-b from-blue-300 to-blue-500 mx-auto justify-center w-full"
             >
-                <!-- SEARCH BAR -->
+                <!-- TYPES BAR -->
                 <div
-                    class="rounded-full border-2 border-slate-400 shadow-lg items-center justify-around xl:justify-center my-5 sm:my-10 xl:my-6 mx-auto bg-slate-300 w-11/12 lg:w-1/2 2xl:w-1/3 flex px-3 py-4"
+                    class="rounded-3xl border-2 text-white w-fit border-slate-400 shadow-lg items-center justify-around xl:justify-center my-5 sm:my-10 xl:my-6 mx-auto bg-slate-300 flex px-4 py-3"
                 >
-                    <form class="w-3/4 flex">
-                        <input
-                            class="bg-slate-100 flex w-full rounded-full px-3 py-2 mx-2"
-                            type="text"
-                            id="search"
-                            name="search"
-                        />
-                    </form>
-                    <button
-                        class="bg-blue-600 text-white hover:bg-blue-400 hover:border-blue-500 hover:scale-[0.95] active:scale-[0.92] active:bg-blue-300 active:border-blue-400 font-bold border-2 border-blue-700 shadow-lg text-center mx-2 py-2 px-4 rounded-full"
+                    <div
+                        class="p-1 flex-col gap-3 items-end flex w-fit justify-center"
                     >
-                        Submit
-                    </button>
+                        <div
+                            class="flex mx-auto drop-shadow-md justify-center text-3xl text-white font-extrabold"
+                        >
+                            <img
+                                class="w-1/2"
+                                src="images/titles/seltyp.png"
+                                alt=""
+                            />
+                        </div>
+                        <div
+                            id="typeContainer"
+                            class="flex-grid grid-center w-fit inline-grid flex grid-cols-4 grid-rows-5 sm:grid-cols-6 mx-auto sm:grid-rows-3 md:grid-cols-6 md:grid-rows-3 lg:grid-cols-9 gap-2 lg:grid-rows-2"
+                        >
+                            <!-- TYPE EXAMPLE -->
+                            <div
+                                id="normal"
+                                class="type-normal notSelected flex-col justify-around col-1 active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/normal.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-center text-slate-300 font-extrabold mx-auto"
+                                >
+                                    Normal
+                                </p>
+                            </div>
+
+                            <div
+                                id="bug"
+                                class="type-bug col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/bug.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 text-center font-extrabold mx-auto"
+                                >
+                                    Bug
+                                </p>
+                            </div>
+                            <div
+                                id="dark"
+                                class="type-dark col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/dark.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Dark
+                                </p>
+                            </div>
+                            <div
+                                id="dragon"
+                                class="type-dragon col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/dragon.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Dragon
+                                </p>
+                            </div>
+                            <div
+                                id="electric"
+                                class="type-electric col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/eletric.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Electric
+                                </p>
+                            </div>
+                            <div
+                                id="fairy"
+                                class="type-fairy col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/fairy.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Fairy
+                                </p>
+                            </div>
+                            <div
+                                id="fighting"
+                                class="type-fighting col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/fighting.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Fighting
+                                </p>
+                            </div>
+                            <div
+                                id="fire"
+                                class="type-fire col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/fire.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Fire
+                                </p>
+                            </div>
+                            <div
+                                id="flying"
+                                class="type-flying col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/flying.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Flying
+                                </p>
+                            </div>
+                            <div
+                                id="ghost"
+                                class="type-ghost col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/ghost.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Ghost
+                                </p>
+                            </div>
+                            <div
+                                id="grass"
+                                class="type-grass col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/grass.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Grass
+                                </p>
+                            </div>
+                            <div
+                                id="ground"
+                                class="type-ground col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/ground.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Ground
+                                </p>
+                            </div>
+                            <div
+                                id="ice"
+                                class="type-ice col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/ice.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Ice
+                                </p>
+                            </div>
+                            <div
+                                id="poison"
+                                class="type-poison col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/poison.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Poison
+                                </p>
+                            </div>
+                            <div
+                                id="psychic"
+                                class="type-psychic col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/psychic.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Psychic
+                                </p>
+                            </div>
+                            <div
+                                id="rock"
+                                class="type-rock col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/rock.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Rock
+                                </p>
+                            </div>
+                            <div
+                                id="steel"
+                                class="type-steel col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/steel.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Steel
+                                </p>
+                            </div>
+                            <div
+                                id="water"
+                                class="type-water col-1 notSelected active:scale-[0.99] select-none hover:cursor-pointer hover:scale-[1.02] border-4 shadow-md rounded-3xl font-bold size-20 flex-col p-3 justify-center items-center"
+                            >
+                                <img
+                                    class="h-10 mx-auto flex opacity-60"
+                                    src="images/types/water.png"
+                                    alt=""
+                                />
+                                <p
+                                    class="text-xs text-slate-300 font-extrabold mx-auto text-center"
+                                >
+                                    Water
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex w-fit flex-col-reverse">
+                            <button
+                                id="searchBtn"
+                                class="bg-blue-600 flex-col flex h-10 hover:bg-blue-400 hover:border-blue-500 hover:scale-[0.95] active:scale-[0.92] active:bg-blue-300 active:border-blue-400 font-bold border-2 border-blue-700 shadow-lg text-center py-2 px-4 rounded-full"
+                            >
+                                Search
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- CONTENT CONTAINER -->
                 <div
-                    class="flex flex-col-reverse md:flex-row grow-0 shrink px-5 w-full mx-auto my-5 sm:my-2 xl:my-5 rounded-lg"
+                    class="flex flex-col-reverse md:flex-row justify-center shrink w-full mx-auto my-5 gap-5 sm:my-2 xl:my-5 rounded-lg"
                 >
                     <!-- SEARCH DISPLAY PANEL -->
                     <div
-                        class="bg-slate-200 border-2 flex h-full overflow-auto border-slate-400 rounded-3xl shadow-lg border-red-100 w-full w-1/2 mx-auto sm:mx-5 lg:w-4/6 my-2 p-5"
+                        class="bg-slate-200 searchDisplay hidden border-2 flex h-full overflow-auto border-slate-400 rounded-3xl shadow-lg border-red-100 w-full w-1/2 mx-auto lg:w-4/6 my-2 p-5"
+                        id="searchContainer"
                     >
                         <div
-                            class="inline-grid flex grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 grid-rows-3 h-full w-full gap-4"
+                            class="inline-grid flex grid-cols-1 sm:grid-cols-3 2xl:grid-cols-4 grid-rows-3 h-full w-full gap-4"
+                            id="searchDisplay"
                         >
                             <!-- EXAMPLE DIV -->
-                            <div
+
+                            <!-- <div
                                 class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
                             >
                                 <img
@@ -198,239 +494,30 @@
                                     class="flex-col-reverse flex items-center text-center justify-center"
                                 >
                                     <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
+                                        class="text-2xl select-none font-bold py-1 font-mono text-slate-700"
                                     >
                                         Ditto
                                     </h1>
                                     <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
+                                        class="mx-2 select-none text-md font-extrabold text-slate-400"
                                     >
                                         No. 132
                                     </p>
                                 </div>
 
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
+                                <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> 
                                 <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
+                                    class="typeBade select-none bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
                                 >
                                     Normal
                                 </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
-                            >
-                                <img
-                                    class="w-1/2 p-4"
-                                    src="images/ditto_sprite_gif.gif"
-                                    alt="ditto sprite"
-                                />
-                                <div
-                                    class="flex-col-reverse flex items-center text-center justify-center"
-                                >
-                                    <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
-                                    >
-                                        Ditto
-                                    </h1>
-                                    <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
-                                    >
-                                        No. 132
-                                    </p>
-                                </div>
-
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
-                                <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
-                                >
-                                    Normal
-                                </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
-                            >
-                                <img
-                                    class="w-1/2 p-4"
-                                    src="images/ditto_sprite_gif.gif"
-                                    alt="ditto sprite"
-                                />
-                                <div
-                                    class="flex-col-reverse flex items-center text-center justify-center"
-                                >
-                                    <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
-                                    >
-                                        Ditto
-                                    </h1>
-                                    <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
-                                    >
-                                        No. 132
-                                    </p>
-                                </div>
-
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
-                                <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
-                                >
-                                    Normal
-                                </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
-                            >
-                                <img
-                                    class="w-1/2 p-4"
-                                    src="images/ditto_sprite_gif.gif"
-                                    alt="ditto sprite"
-                                />
-                                <div
-                                    class="flex-col-reverse flex items-center text-center justify-center"
-                                >
-                                    <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
-                                    >
-                                        Ditto
-                                    </h1>
-                                    <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
-                                    >
-                                        No. 132
-                                    </p>
-                                </div>
-
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
-                                <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
-                                >
-                                    Normal
-                                </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
-                            >
-                                <img
-                                    class="w-1/2 p-4"
-                                    src="images/ditto_sprite_gif.gif"
-                                    alt="ditto sprite"
-                                />
-                                <div
-                                    class="flex-col-reverse flex items-center text-center justify-center"
-                                >
-                                    <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
-                                    >
-                                        Ditto
-                                    </h1>
-                                    <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
-                                    >
-                                        No. 132
-                                    </p>
-                                </div>
-
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
-                                <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
-                                >
-                                    Normal
-                                </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
-                            >
-                                <img
-                                    class="w-1/2 p-4"
-                                    src="images/ditto_sprite_gif.gif"
-                                    alt="ditto sprite"
-                                />
-                                <div
-                                    class="flex-col-reverse flex items-center text-center justify-center"
-                                >
-                                    <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
-                                    >
-                                        Ditto
-                                    </h1>
-                                    <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
-                                    >
-                                        No. 132
-                                    </p>
-                                </div>
-
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
-                                <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
-                                >
-                                    Normal
-                                </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
-                            >
-                                <img
-                                    class="w-1/2 p-4"
-                                    src="images/ditto_sprite_gif.gif"
-                                    alt="ditto sprite"
-                                />
-                                <div
-                                    class="flex-col-reverse flex items-center text-center justify-center"
-                                >
-                                    <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
-                                    >
-                                        Ditto
-                                    </h1>
-                                    <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
-                                    >
-                                        No. 132
-                                    </p>
-                                </div>
-
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
-                                <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
-                                >
-                                    Normal
-                                </div>
-                            </div>
-                            <div
-                                class="bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1"
-                            >
-                                <img
-                                    class="w-1/2 p-4"
-                                    src="images/ditto_sprite_gif.gif"
-                                    alt="ditto sprite"
-                                />
-                                <div
-                                    class="flex-col-reverse flex items-center text-center justify-center"
-                                >
-                                    <h1
-                                        class="text-2xl font-bold py-1 font-mono text-slate-700"
-                                    >
-                                        Ditto
-                                    </h1>
-                                    <p
-                                        class="mx-2 text-md font-extrabold text-slate-400"
-                                    >
-                                        No. 132
-                                    </p>
-                                </div>
-
-                                <!-- <span class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis, placeat? Unde, ut! Perspiciatis, quia esse?</span> -->
-                                <div
-                                    class="typeBade bg-gradient-to-b m-2 from-fuchsia-300 to-fuchsia-500 shadow-md border-fuchsia-400 border-2 rounded-full font-bold text-lg text-center px-3"
-                                >
-                                    Normal
-                                </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- CHARACTER PANEL -->
                     <div
-                        class="bg-slate-200 h-full shadow-lg border-2 border-slate-400 border- rounded-3xl border-blue-500 w-full mx-auto w-1/2 lg:w-2/6 p-3 my-2"
+                        class="bg-slate-200 hidden h-full shadow-lg border-2 border-slate-400 rounded-3xl border-blue-500 w-full mx-auto w-1/2 lg:w-2/6 p-3 my-2"
+                        id="characterContainer"
                     >
                         <div
                             class="p-1 m-3 border-2 border-slate-400 bg-gradient-to-b from-slate-400 to-slate-500 rounded-3xl"
@@ -451,15 +538,15 @@
                                 </h1>
                                 <!-- ABILITIES -->
                                 <div
-                                    class="flex-col w-full xl:w-1/2 h-full p-3 flex my-5 mx-auto"
+                                    class="flex-col w-full h-full p-3 flex my-5 mx-auto"
                                 >
                                     <h1
-                                        class="text-3xl flex font-bold mx-auto p-3 text-center"
+                                        class="text-3xl select-none flex font-bold mx-auto p-3 text-center"
                                     >
                                         ABILITIES
                                     </h1>
                                     <ol
-                                        class="text-slate-100 justify-center p-3 flex gap-2"
+                                        class="text-slate-100 select-none justify-center p-3 w-full flex gap-2"
                                     >
                                         <li
                                             class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
@@ -484,18 +571,18 @@
 
                                     <!-- TYPES -->
                                     <h1
-                                        class="text-3xl flex font-bold mx-auto p-3 text-center"
+                                        class="text-3xl select-none flex font-bold mx-auto p-3 text-center"
                                     >
-                                        TYPES
+                                        TYPE
                                     </h1>
                                     <ol
-                                        class="text-slate-100 justify-center p-3 flex gap-2"
+                                        class="text-slate-100 justify-center p-1 flex"
                                     >
                                         <li
                                             class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
                                         >
                                             <p
-                                                class="text-lg font-bold font-italics"
+                                                class="text-lg select-none font-bold font-italics"
                                             >
                                                 Normal
                                             </p>
@@ -505,7 +592,7 @@
                                             class="bg-gradient-to-b shadow-lg from-slate-500 to-slate-700 border-2 border-slate-400 rounded-3xl px-4 py-1"
                                         >
                                             <p
-                                                class="text-lg font-bold font-italics"
+                                                class="text-lg select-none font-bold font-italics"
                                             >
                                                 Normal
                                             </p>
@@ -517,7 +604,7 @@
                                 >
                                     <a
                                         href="#"
-                                        class="bg-blue-600 text-white mx-auto hover:bg-blue-400 hover:border-blue-500 hover:scale-[0.95] active:scale-[0.92] active:bg-blue-300 active:border-blue-400 font-bold border-2 border-blue-700 shadow-lg text-center mx-2 py-2 px-4 rounded-full"
+                                        class="bg-blue-600 select-none text-white mx-auto hover:bg-blue-400 hover:border-blue-500 hover:scale-[0.95] active:scale-[0.92] active:bg-blue-300 active:border-blue-400 font-bold border-2 border-blue-700 shadow-lg text-center mx-2 py-2 px-4 rounded-full"
                                         >Detailed Stats</a
                                     >
                                 </p>
@@ -528,6 +615,6 @@
             </section>
         </div>
 
-        <script src="main.js"></script>
+        <script src="types.js"></script>
     </body>
 </html>

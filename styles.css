@@ -2,10 +2,97 @@
     background-image: radial-gradient(ellipse at top left, #aaaaaa, #000000);
 }
 
+.typesHidden {
+    opacity: 50%;
+    box-shadow: none;
+}
+
+.type-normal {
+    background-color: tan;
+    border-color: rgb(125, 112, 95);
+}
+.type-bug {
+    background-color: rgb(23, 156, 90);
+    border-color: rgb(15, 117, 66);
+}
+.type-dark {
+    background-color: rgb(86, 18, 214);
+    border-color: rgb(94, 59, 160);
+}
+.type-dragon {
+    background-color: rgb(202, 139, 204);
+    border-color: rgb(134, 78, 136);
+}
+.type-electric {
+    background-color: rgb(201, 176, 37);
+    border-color: rgb(161, 142, 18);
+}
+.type-fairy {
+    background-color: rgb(219, 185, 241);
+    border-color: rgb(176, 114, 218);
+}
+.type-fighting {
+    background-color: rgb(253, 170, 155);
+    border-color: rgb(133, 85, 80);
+}
+.type-fire {
+    background-color: rgb(224, 49, 18);
+    border-color: rgb(136, 70, 52);
+}
+.type-flying {
+    background-color: rgb(207, 81, 227);
+    border-color: rgb(125, 71, 130);
+}
+.type-ghost {
+    background-color: rgb(138, 23, 195);
+    border-color: rgb(116, 95, 125);
+}
+.type-grass {
+    background-color: rgb(54, 146, 44);
+    border-color: rgb(86, 142, 72);
+}
+.type-ground {
+    background-color: rgb(222, 144, 41);
+    border-color: rgb(125, 112, 95);
+}
+
+.notSelected {
+    opacity: 50%;
+}
+.type-ice {
+    background-color: rgb(60, 200, 191);
+
+    border-color: rgb(72, 122, 129);
+}
+.type-poison {
+    background-color: rgb(185, 137, 193);
+
+    border-color: rgb(125, 95, 125);
+}
+.type-psychic {
+    background-color: rgb(210, 140, 175);
+
+    border-color: rgb(175, 121, 146);
+}
+.type-rock {
+    background-color: rgb(178, 131, 30);
+    border-color: rgb(163, 132, 91);
+}
+.type-steel {
+    background-color: rgb(151, 151, 151);
+    border-color: rgb(169, 167, 164);
+}
+.type-gen {
+    background-color: rgb(230, 230, 230);
+}
+.type-water {
+    background-color: rgb(43, 149, 199);
+    border-color: rgb(78, 120, 168);
+}
 /* Hide dropdown menu by default */
 .dropdown-menu {
     position: absolute;
-    top: 112px;
+    top: 116px;
     right: 5%;
     background-color: #6e6e6e;
     border: 1px solid #404040;

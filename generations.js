@@ -2,14 +2,16 @@ const menuButton = document.getElementById('menuButton');
 const dropdownMenu = document.getElementById('dropdownMenu');
 
 const searchBtn = document.getElementById('searchBtn');
-const inputForm = document.getElementById('search');
-const searchOptions = document.getElementById('options');
 const searchDisplay = document.querySelector('#searchDisplay');
 const searchContainer = document.querySelector('#searchContainer');
 const characterContainer = document.querySelector('#characterContainer');
 const randomNum = getRandomNumber();
+const genContainer = document.querySelector('#genContainer');
+const genDivs = genContainer.querySelectorAll('div');
 
-console.log(randomNum);
+let currentAbortController = null;
+let selectedGen = '';
+
 let APIurl = 'https://pokeapi.co/api/v2/';
 const gridItem =
     'bg-gradient-to-br shadow-inner from-slate-200 to-fuchsia-300 hover:cursor-pointer hover:scale-[1.01] active:scale-[0.98] flex flex-col items-center text-slate-800 justify-center shadow-lg border-2 border-slate-300 rounded-3xl py-5 px-3 col-1';
@@ -21,59 +23,19 @@ let pokemon = {
     id: 0,
 };
 
-// window.addEventListener('resize', () => {
-//     radarChart.resize();
-// });
-
-//API FETCH DATA
+const types = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 async function fetchData() {
-    //console.log(searchOptions.value);
     let result, data;
-    searchTerm = inputForm.value;
-    searchType = searchOptions.value;
-    // console.log(searchType);
+    // searchTerm = inputForm.value;
+    // searchType = searchOptions.value;
+
     try {
-        switch (searchOptions.value) {
-            case 'Name':
-                result = await fetch(
-                    APIurl + 'pokemon/' + inputForm.value.toLowerCase()
-                );
+        result = await fetch(APIurl + 'generation/' + selectedGen);
 
-                data = await result.json();
+        data = await result.json();
 
-                return { data: data, type: 1 };
-                break;
-            case 'Type':
-                result = await fetch(
-                    APIurl + 'type/' + inputForm.value.toLowerCase()
-                );
-                data = await result.json();
-
-                console.log(data);
-                return { data: data.pokemon, type: 2 };
-                break;
-            // let apiurl = 'https://pokeapi.co/api/v2/pokemon/' + inputForm.value;
-            case 'Color':
-                result = await fetch(
-                    APIurl + 'pokemon-color/' + inputForm.value.toLowerCase()
-                );
-                data = await result.json();
-                return { data: data.pokemon_species, type: 3 };
-                break;
-            //   let APIurl = 'https://pokeapi.co/api/v2/pokemon/' + inputForm.value;
-            case 'Ability':
-                result = await fetch(
-                    APIurl + 'ability/' + inputForm.value.toLowerCase()
-                );
-                data = await result.json();
-                return { data: data.pokemon, type: 4 };
-                break;
-            //  let APIurl = 'https://pokeapi.co/api/v2/pokemon/' + inputForm.value;
-            default:
-                throw new Error('Invalid search type');
-                break;
-        }
+        return { data: data, type: 1 };
     } catch (error) {
         return null;
     }
@@ -103,7 +65,7 @@ async function populateGrid() {
 
     clearDisplay();
     const fetchResult = await fetchData();
-    // console.log(fetchResult);
+    console.log(fetchResult);
 
     if (!fetchResult) {
         console.log('No data found or fetch error');
@@ -112,35 +74,21 @@ async function populateGrid() {
         return;
     }
 
-    const { data, type } = fetchResult;
+    const { data } = fetchResult;
+    console.log(data.pokemon_species);
 
-    if (data && type === 1) {
-        if (data.length > 1) {
-            data.forEach(item => {
-                addToGrid(item);
-            });
-        } else {
-            addToGrid(data);
-        }
-    } else if (data && type === 3) {
-        // console.log(data);
-        for (const pokemon of data) {
-            //console.log(pokemon);
+    if (data.pokemon_species.length > 1) {
+        const pokemonList = data.pokemon_species;
+        for (const pokemon of pokemonList) {
+            console.log(pokemon);
             const item = await retrievePokemonInfo(pokemon, 'yes');
             //console.log(item);
             addToGrid(item);
         }
-    } else if (data) {
-        for (const pokemon of data) {
-            //console.log(item);
-            const item = await retrievePokemonInfo(pokemon);
-            //console.log(item);
-            addToGrid(item);
-        }
     } else {
-        //console.log(data);
-        addToGrid(searchTerm, 0);
+        addToGrid(data.pokemon);
     }
+
     // console.log(data);
     // console.log(type);
     //addToGrid();
@@ -158,10 +106,6 @@ const clearCharDisplay = () => {
         characterContainer.removeChild(characterContainer.firstChild);
     }
 };
-
-function clearSearchBar() {
-    inputForm.value = '';
-}
 
 function titleCase(word) {
     const titleCase =
@@ -268,6 +212,7 @@ function addToGrid(info, x = 1) {
         `;
     } else {
         // div.classList.add(gridItem);
+
         const name =
             info.name.split('').shift().toUpperCase() +
             info.name.split('').slice(1).join('');
@@ -330,6 +275,27 @@ function addToGrid(info, x = 1) {
         loadDetails(info);
     });
 }
+
+// SELECT TYPE
+function selectGen(id) {
+    console.log(id);
+    selectedGen = id;
+    genDivs.forEach(div => {
+        if (div.id === selectedGen && div.classList.contains('notSelected')) {
+            div.classList.remove('notSelected');
+        } else if (div.classList.contains('notSelected')) {
+            //do nothing
+        } else {
+            div.classList.add('notSelected');
+        }
+    });
+}
+
+genDivs.forEach(div =>
+    div.addEventListener('click', event => {
+        selectGen(div.id);
+    })
+);
 //Expose Div
 
 const expose = element => {
@@ -347,10 +313,6 @@ const dropdownExpose = element => {
 
 //console.log(menuButton);
 
-function createVal() {
-    console.log(inputForm.value);
-}
-
 //EVENT LISTENERS
 menuButton.addEventListener('click', event => {
     dropdownExpose();
@@ -360,16 +322,10 @@ searchBtn.addEventListener('click', populateGrid);
 //inputForm.addEventListener('input', createVal);
 
 // Prevent form submission on Enter key press
-inputForm.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') {
-        event.preventDefault();
-        populateGrid();
-    }
-});
 
 // Prevent default form submission
 const form = document.querySelector('form'); // Make sure to target the correct form
-form.addEventListener('submit', function (event) {
+searchBtn.addEventListener('submit', function (event) {
     event.preventDefault();
     populateGrid();
 });
@@ -380,10 +336,8 @@ function getRandomNumber() {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//console.log(inputForm.textContent);
 function init() {
     clearDisplay();
-    clearSearchBar();
 }
 
 init();
